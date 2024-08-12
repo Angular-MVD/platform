@@ -1,9 +1,9 @@
-name: Deploy Angular to GitHub Pages
+name: Build and Deploy to S3
 
 on:
   push:
     branches:
-      - main # O el nombre de tu rama principal
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,16 +16,21 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18' # Versión de Node.js que usas
+        node-version: '18'
 
     - name: Install dependencies
       run: npm install
 
     - name: Build Angular app
-      run: npm run build website -- --base-href=/angular-mvd-platform/
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./dist/website/browser
+      run: npm run build website
+    
+    - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: angularmvd.com
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+          SOURCE_DIR: ./dist/website/browser/
