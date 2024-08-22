@@ -97,7 +97,7 @@
       "schematics": {},
       "root": "projects/website",
       "sourceRoot": "projects/website/src",
-      "prefix": "app",
+      "prefix": "website",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
