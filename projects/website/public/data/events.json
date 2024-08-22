@@ -1,0 +1,27 @@
+[
+    {
+        "id": "meetup-2024-agosto",
+        "title": "Meetup Agosto en Howdy",
+        "description": "🎉 ¡Qué gran éxito fue nuestra meetup de Angular Agosto 2024! 🎉 <br />Nos encanta ver cómo la comunidad sigue participando y creciendo en cada evento. <br />Es increíble compartir conocimientos y experiencias con tantos entusiastas del desarrollo web. 🧑🏻‍💻👩🏻‍💻<br />¡Gracias a todos los que asistieron y contribuyeron a hacer de este evento algo especial!<br />¡Nos vemos en la próxima! 🚀",
+        "date": "2024-08-20 19:00:00",
+        "host": "Howdy",
+        "location": "F. García Cortinas 2357, Piso 3",
+        "talks": [
+            {
+                "title": "Dame mi IA, no quiero quedarme atrás!",
+                "speaker": "Darío Macchi",
+                "speakerCompany": "Howdy",
+                "speakerLinkedin": "https://www.linkedin.com/in/dariomac/"
+            },
+            {
+                "title": "Librerías Angular del maletín",
+                "speaker": "Gustavo Rodríguez ",
+                "speakerCompany": "Solcre",
+                "speakerLinkedin": "https://www.linkedin.com/in/gustavguez/"
+            }
+        ],
+        "pictures": [
+            "/images/events/2024-08/2.jpeg"
+        ]
+    }
+]
