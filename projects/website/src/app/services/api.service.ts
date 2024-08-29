@@ -18,7 +18,7 @@ export class ApiService {
     return this.httClient.get(environment.EVENTS_URL).pipe(
       tap((response: any) => this.events = <EventInfo[]> response),
       //Prevent error on startup
-      catchError(()=> of(null))
+      //catchError(()=> of(null))
     );
   }
 }
