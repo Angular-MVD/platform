@@ -27,7 +27,7 @@
     </div>
 </section>
 
-@if (events.length > 0){
-    <website-event-slider [eventInfo]="events[0]" />
+@if (lastEvent()){
+    <website-event-slider [eventInfo]="lastEvent()!" />
 }
 

@@ -118,7 +118,14 @@
             "styles": [
               "projects/website/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "projects/website/src/main.server.ts",
+            "prerender": {
+              "discoverRoutes": true
+            },
+            "ssr": {
+              "entry": "projects/website/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -139,7 +146,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/website/src/environments/environment.ts",
+                  "with": "projects/website/src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
